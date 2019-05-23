@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/index/main",
+    "pages/user/main",
+    "pages/all/main",
+    "pages/order_detail/main",
+    "pages/order_list/main",
+    "pages/web_view/main",
+    "pages/cart/main",
+    "pages/reserve/main",
+    "pages/login/main",
+    "pages/info/main",
+    "pages/order_detail/success/main",
+    "pages/detail/main"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1c1b20",
+    "navigationBarTitleText": "南屋北舍",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "backgroundColor": "#2a2323",
+    "color": "#fff",
+    "selectedColor": "#90bb34",
+    "list": [{
+      "iconPath":"static/images/home.png",
+      "selectedIconPath": "static/images/home_active.png",
+      "pagePath": "pages/index/main",
+      "text": "首页"
+    }, {
+      "iconPath":"static/images/select.png",
+      "selectedIconPath": "static/images/select_active.png",
+      "pagePath": "pages/all/main",
+      "text": "全部精选"
+    },{
+      "iconPath":"static/images/cart.png",
+      "selectedIconPath": "static/images/cart_active.png",
+      "pagePath": "pages/cart/main",
+      "text": "购物车"
+    },{
+      "iconPath":"static/images/user.png",
+      "selectedIconPath": "static/images/user_active.png",
+      "pagePath": "pages/user/main",
+      "text": "个人中心"
+    }]
+  }
+}
