@@ -1,7 +1,7 @@
 <template>
   <div class="container no-header">
     <scroll-view class="list" scroll-y="true" enable-back-to-top=true  @scrolltolower="loadData(true)">
-      <div class="top" style="background-image: url(http://sonotemp.b0.upaiyun.com/sono/images/user_bg.jpg)">
+      <div class="top" style="background-image: url(http://sonotemp.b0.upaiyun.com/yanzhuan/static/images/user_bg.jpg)">
         <image class="avatar" :src="userInfo.user.self_img"></image>
         <div class="content">
           <span class="name">{{userInfo.user.nick_name}}</span>
@@ -23,7 +23,7 @@
             <div class="picBox" :style="'background-image:url('+item.good_img+')'"></div>
             <div class="desc">
               <div class="time">下单时间：{{item.timeStr}}</div>
-              <div class="price">合计:<span style="color: #ff434c">{{item.order_amount}}</span></div>
+              <div class="price">合计:<span style="color: #806ffd">{{item.order_amount}}</span></div>
             </div>
           </div>
         </div>
@@ -170,6 +170,7 @@ export default {
     font-size: 24/@bs;
     line-height: 30/@bs;
     .name{
+      color: #fff;
       font-weight: bold;
     }
     .num{
@@ -260,7 +261,7 @@ export default {
         width: 116/@bs;
         height: 36/@bs;
         border-radius: 5/@bs;
-        background-color: #ff434c;
+        background-color: #806ffd;
         color: #fff;
         text-align: center;
         font-size: 20/@bs;

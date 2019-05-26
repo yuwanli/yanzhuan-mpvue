@@ -9,7 +9,7 @@
 	},
 	"miniprogramRoot": "dist/wx/",
 	"compileType": "miniprogram",
-	"appid": "wx3fbba95fb4902cd9",
+	"appid": "wxc087ff83ac74a5be",
 	"projectname": "yanzhuan-mpvue",
 	"condition": {
 		"search": {

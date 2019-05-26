@@ -7,7 +7,7 @@
       </div>
       <div class="address_info">{{address.province}}{{address.city}}{{address.district}}{{address.address}}</div>
     </div>
-    <div class="title">南屋北舍</div>
+    <div class="title">严妆</div>
     <div class="item" v-for="item in order" :key="item.id">
       <div class="item_base">
         <div class="name">商品：{{item.good_name}}</div>
@@ -100,7 +100,7 @@ export default {
 .address{
   overflow: hidden;
   padding: 20/@bs 30/@bs;
-  border-bottom: 8/@bs solid #FF434C;
+  border-bottom: 8/@bs solid #806ffd;
   background-color: #ebebeb;
   color: #333;
   font-size: 24/@bs;
@@ -129,7 +129,7 @@ export default {
     width: 200/@bs;
     height: 50/@bs;
     border-radius: 25/@bs;
-    background-color: #FF434C;
+    background-color: #806ffd;
     color: #fff;
     color: #fff;
     text-align: center;
@@ -140,7 +140,7 @@ export default {
 .total{
   margin-top: 20/@bs;
   padding: 0 30/@bs;
-  color: #FF434C;
+  color: #806ffd;
   text-align: right;
   font-weight: bold;
   font-size: 30/@bs;
@@ -150,7 +150,7 @@ export default {
   width: 380/@bs;
   height: 50/@bs;
   border-radius: 25/@bs;
-  background-color: #FF434C;
+  background-color: #806ffd;
   color: #fff;
   text-align: center;
   font-size: 30/@bs;

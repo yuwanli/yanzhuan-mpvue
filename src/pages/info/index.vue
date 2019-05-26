@@ -135,7 +135,7 @@ export default {
       height: 28/@bs;
       border: 1/@bs solid #fff;
       border-radius: 50%;
-      background-color: #ff434c;
+      background-color: #806ffd;
       color: #fff;
       text-align: center;
       font-size: 20/@bs;

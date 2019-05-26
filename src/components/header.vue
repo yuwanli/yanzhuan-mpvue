@@ -1,10 +1,10 @@
 <template>
   <div class="header">
-    <!-- <div class="icon like"></div> -->
+    <div class="icon like"></div>
     <!-- <image @click="openWeb" class="icon like" src="/static/images/like.png"></image> -->
     <div class="center">
-      <image class="icon logo" src="/static/images/logo.png"></image>
-      <p>南北农产品 优选平台</p>
+      <image class="icon logo" src="/static/images/header.png"></image>
+      <div class="circle"></div>
     </div>
     <div @click="goToInfo" class="message">
       <image class="icon info" src="/static/images/info.png"></image>
@@ -49,33 +49,35 @@ export default {
   left: 0;
   z-index:1000000;
   display: flex;
-  align-items:center;
+  align-items:flex-start;
   justify-content: space-between;
   box-sizing: border-box;
   padding: 0 30/@bs;
   width: 100%;
   height: 100/@bs;
-  background-color: #91bb35;
-  box-shadow: 0 0 10/@bs #91bb35;
+  background-color: #806ffd;
+  box-shadow: 0 0 10/@bs #806ffd;
   color: #fff;
   .icon{
     &.like{
       width: 32/@bs;
       height: 28/@bs;
+      margin-top: 34/@bs;
     }
     &.info{
       width: 28/@bs;
       height: 32/@bs;
     }
     &.logo{
-      width: 132/@bs;
-      height: 38/@bs;
+      width: 142/@bs;
+      height: 159/@bs;
     }
   }
   .message{
     position: relative;
     width: 28/@bs;
     height: 32/@bs;
+    margin-top: 34/@bs;
     transform-origin: top center;
     &-label{
       position: absolute;
@@ -93,6 +95,19 @@ export default {
     flex: 1;
     flex-direction: column;
     justify-content: center;
+    height: 170/@bs;
+    position: relative;
+    .circle{
+      width: 170/@bs;
+      height: 170/@bs;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      background-color: #806ffd;
+      border-radius: 50%;
+      z-index: -1;
+    }
     p{
       margin-top: 10/@bs;
       color: #181a1b;

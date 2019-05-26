@@ -14,7 +14,7 @@
       </div>
       <div class="modal_content-btn">
         <div class="btn add" @click="addToCart">加入购物车</div>
-        <div class="btn right" @click="addAndPay">立即去结算</div>
+        <div class="btn right" @click="addAndPay">立即结算</div>
       </div>
     </div>
   </div>
@@ -121,6 +121,7 @@ export default {
         line-height: 56/@bs;
         &.right{
           background-color: @darkRed;
+          color: #000;
         }
       }
     }
@@ -172,7 +173,7 @@ export default {
       }
       p{
         margin-top: 18/@bs;
-        color: #8DB610;
+        color: @themeBlack;
         font-weight: bold;
         font-size: 36/@bs;
         span {

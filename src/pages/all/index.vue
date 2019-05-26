@@ -77,4 +77,5 @@ export default {
   left: 0;
   border-top: 1/@bs solid #d9d9d9;
 }
+
 </style>

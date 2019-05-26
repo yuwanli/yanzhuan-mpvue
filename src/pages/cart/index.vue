@@ -12,7 +12,7 @@
         </template>
         <button v-else class="address_new"  @click="openAddress">新增地址</button>
       </div>
-      <div class="title">南屋北舍</div>
+      <div class="title">严妆</div>
       <div class="item" v-for="(item,index) in cart" :key="item.id">
         <div class="item_base">
           <div class="item_base-name">商品：{{item.goods_name}}</div>
@@ -107,7 +107,7 @@ export default {
         content: '确定删除该商品？',
         cancelText: '取消',
         confirmText: '确定',
-        confirmColor: '#FF434C',
+        confirmColor: '#806ffd',
         success: function (res) {
           if (res.confirm) {
             deleteCart(id).then(res => {
@@ -203,7 +203,7 @@ export default {
     width: 200/@bs;
     height: 50/@bs;
     border-radius: 25/@bs;
-    background-color: #FF434C;
+    background-color: #806ffd;
     color: #fff;
     color: #fff;
     text-align: center;
@@ -228,7 +228,7 @@ export default {
 .address{
   overflow: hidden;
   padding: 20/@bs 30/@bs;
-  border-bottom: 8/@bs solid #FF434C;
+  border-bottom: 8/@bs solid #806ffd;
   background-color: #ebebeb;
   color: #333;
   font-size: 24/@bs;
@@ -248,9 +248,9 @@ export default {
     align-items: center;
     justify-content: center;
     height: 30/@bs;
-    color: rgba(0,0,0,0.6);
     border: 1px solid rgba(0,0,0,0);
     background: none;
+    color: rgba(0,0,0,0.6);
     font-size: 24/@bs;
     image{
       margin-left: 5/@bs;
@@ -263,7 +263,7 @@ export default {
     width: 200/@bs;
     height: 50/@bs;
     border-radius: 25/@bs;
-    background-color: #FF434C;
+    background-color: #806ffd;
     color: #fff;
     color: #fff;
     text-align: center;
@@ -274,7 +274,7 @@ export default {
 .total{
   margin-top: 20/@bs;
   padding: 0 30/@bs;
-  color: #FF434C;
+  color: #806ffd;
   text-align: right;
   font-weight: bold;
   font-size: 30/@bs;
@@ -284,7 +284,7 @@ export default {
   width: 380/@bs;
   height: 50/@bs;
   border-radius: 25/@bs;
-  background-color: #FF434C;
+  background-color: #806ffd;
   color: #fff;
   text-align: center;
   font-size: 30/@bs;

@@ -114,19 +114,20 @@ export default {
     color: rgba(255,255,255,0.5);
     font-size: 24/@bs;
     &.cart{
-      border-left: 1/@bs solid rgba(180, 40, 45, 0.1);
+      border-left: 1/@bs solid rgba(255,255,255,0.2);
+      color: #fff;
     }
     &.buy{
       background-color: @darkRed;
-      color: #fff;
+      color: #000;
     }
     &.noMore{
-      background-color: #90bb34;
-      color: #fff;
       flex: 0 0 320/@bs;
+      background-color: #e8e8e8;
+      color: #676767;
       span{
-        text-decoration: underline;
         margin-left: 20/@bs;
+        text-decoration: underline;
       }
     }
   }

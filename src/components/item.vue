@@ -1,7 +1,7 @@
 <template>
   <div class="item" @click="itemClick(item.id)">
     <img mode="aspectFill" class="item-img" :src="item.image" alt="">
-    <p class="item-name">{{item.title || 'sono'}}</p>
+    <p class="item-name">{{item.title || '严妆'}}</p>
     <p class="item-price">¥ {{item.price || '0.00'}}</p>
   </div>
 </template>
@@ -42,7 +42,7 @@ export default {
     width: 230/@bs;
     height: 230/@bs;
     background-color: #e8e8e8;
-    background-image: url(http://sonotemp.b0.upaiyun.com/sono2.0/static/images/default.jpg);
+    background-image: url(http://sonotemp.b0.upaiyun.com/yanzhuan/static/images/default.jpg);
     background-position: center;
     background-size: 230/@bs 230/@bs;
   }
@@ -56,7 +56,7 @@ export default {
     line-height: 36/@bs;
   }
   &-price{
-    color: @darkRed;
+    color: @themeBlack;
   }
 
 }

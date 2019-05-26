@@ -27,7 +27,7 @@ function serialize (params, obj, traditional, scope) {
 function serializeData (options) {
   options.data = options.data || {}
   if (options.sono) {
-    options.url = `https://admin.sono.mobi/${options.sono}`
+    options.url = `https://yz.sono.mobi/${options.sono}`
   }
   if (type(options.data) === 'string' && type(options.data_bk) === 'object') {
     options.data = options.data_bk

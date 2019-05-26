@@ -1,11 +1,10 @@
 <template>
   <div class="container no-header">
-    <div class="con">
-      <div class="text">支付成功</div>
-      <image src="/static/images/logo2.png"></image>
-      <p>sono.mobi</p>
+    <div class="text">支付成功</div>
+      <div class="logo">
+        <img src="/static/images/header.png" alt="">
+      </div>
       <div class="btn order" @click="toOrder">查看订单</div>
-    </div>
   </div>
 </template>
 
@@ -47,11 +46,18 @@ export default {
       font-size: 30/@bs;
       line-height: 40/@bs;
     }
-    image{
-      display: block;
-      margin: 0 auto;
-      width: 104/@bs;
-      height: 104/@bs;
+    .logo{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 170/@bs;
+      height: 170/@bs;
+      border-radius: 50%;
+      background-color: @themeBlack;
+      image{
+        width: 142/@bs;
+        height: 159/@bs;
+      }
     }
     p{
       margin-bottom: 30/@bs;
@@ -62,7 +68,7 @@ export default {
     }
     .btn{
       box-sizing: border-box;
-      margin:0 auto 30/@bs;
+      margin:30/@bs auto 30/@bs;
       width: 260/@bs;
       height: 50/@bs;
       border: 1/@bs solid #989898;
@@ -72,7 +78,7 @@ export default {
       line-height: 50/@bs;
       &.order{
         border: none;
-        background-color: #ff434c;
+        background-color: #806ffd;
         color: #fff;
       }
     }

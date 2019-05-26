@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <sono-header></sono-header>
-      <swiper class="swiper" :indicator-dots="true" :circular="true" indicator-color="rgba(0,0,0,0.5)" indicator-active-color="#b6e429">
+      <swiper class="swiper" :indicator-dots="true" :circular="true" indicator-color="rgba(0,0,0,0.5)" indicator-active-color="#806ffd">
         <block v-for="item in images" v-bind:key="item.id">
           <swiper-item  @click="clickHandle(item.id)">
             <img mode="aspectFill" class="swiper-img" :src="item.image" />

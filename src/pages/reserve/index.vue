@@ -144,22 +144,22 @@ export default {
     font-size: 30/@bs;
   }
   .tips{
-    color: #b4282d;
-    font-size: 20/@bs;
-    text-align: center;
-    line-height: 30/@bs;
     margin-top: 30/@bs;
     margin-bottom: 10/@bs;
     height: 30/@bs;
+    color: #b4282d;
+    text-align: center;
+    font-size: 20/@bs;
+    line-height: 30/@bs;
     span{
       display: inline-block;
-      vertical-align: top;
+      margin-top: 10/@bs;
+      margin-right: 10/@bs;
       width: 10/@bs;
       height: 10/@bs;
       border-radius: 50%;
-      margin-top: 10/@bs;
-      margin-right: 10/@bs;
       background-color: #b4282d;
+      vertical-align: top;
     }
   }
   &_item{
@@ -187,14 +187,14 @@ export default {
     width: 380/@bs;
     height: 50/@bs;
     border-radius: 20/@bs;
-    background-color: #f09da1;
+    background-color: rgba(128,111,253,0.5);
     color: #fff;
     text-align: center;
     font-size: 24/@bs;
     line-height: 50/@bs;
     transition: all 0.3s ease;
     &.active{
-      background-color: #ff434c;
+      background-color: rgba(128,111,253,1);
     }
   }
 }
@@ -223,6 +223,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   margin-bottom: 15/@bs;
+  padding-top: 80/@bs;
   height: 140/@bs;
   background-color: #fff;
   h1{

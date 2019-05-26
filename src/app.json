@@ -16,13 +16,13 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#1c1b20",
-    "navigationBarTitleText": "南屋北舍",
+    "navigationBarTitleText": "严妆",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
-    "backgroundColor": "#2a2323",
+    "backgroundColor": "#806ffd",
     "color": "#fff",
-    "selectedColor": "#90bb34",
+    "selectedColor": "#fee900",
     "list": [{
       "iconPath":"static/images/home.png",
       "selectedIconPath": "static/images/home_active.png",
@@ -32,7 +32,7 @@
       "iconPath":"static/images/select.png",
       "selectedIconPath": "static/images/select_active.png",
       "pagePath": "pages/all/main",
-      "text": "全部精选"
+      "text": "新品"
     },{
       "iconPath":"static/images/cart.png",
       "selectedIconPath": "static/images/cart_active.png",

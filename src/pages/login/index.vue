@@ -56,10 +56,10 @@ export default {
 .login{
   margin: 180/@bs auto;
   width: 380/@bs;
-  height: 50/@bs;
+  height: 60/@bs;
   border: none;
-  border-radius: 20/@bs;
-  background-color: #ff434c;
+  border-radius: 30/@bs;
+  background-color: #806ffd;
   color: #fff;
   font-size: 24/@bs;
   line-height: 50/@bs;

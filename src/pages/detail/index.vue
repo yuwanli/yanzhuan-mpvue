@@ -25,7 +25,7 @@ export default {
   data () {
     return {
       data: {
-        content: '<p style="text-align:center">sono</p>'
+        content: '<p style="text-align:center">严妆</p>'
       }
     }
   },
@@ -77,8 +77,8 @@ export default {
 @import '~src/utils/less/var.less';
 @import url("~mpvue-wxparse/src/wxParse.css");
 .container{
-  background-color: @grayBg;
   padding-bottom: 80/@bs;
+  background-color: @grayBg;
 }
 .content{
   background-color: #fff;
@@ -90,6 +90,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   margin-bottom: 15/@bs;
+  padding-top: 80/@bs;
   height: 140/@bs;
   background-color: #fff;
   h1{
