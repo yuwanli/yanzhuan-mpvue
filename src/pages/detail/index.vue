@@ -99,7 +99,7 @@ export default {
     line-height: 42/@bs;
   }
   p{
-    color: @darkRed;
+    color: @themeBlack;
     font-size: 30/@bs;
     line-height: 42/@bs;
   }

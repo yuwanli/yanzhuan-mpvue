@@ -126,7 +126,6 @@ export default {
 @import '~src/utils/less/var.less';
 @import url("~mpvue-wxparse/src/wxParse.css");
 .container{
-  padding-bottom: 80/@bs;
   background-color: @grayBg;
 }
 .content{
@@ -232,7 +231,7 @@ export default {
     line-height: 42/@bs;
   }
   p{
-    color: @darkRed;
+    color: @themeBlack;
     font-size: 30/@bs;
     line-height: 42/@bs;
   }

@@ -15,4 +15,7 @@ export default {
 .wxParse .p{
   margin: 0!important;
 }
+.wxParse .img{
+  display: block!important;
+}
 </style>

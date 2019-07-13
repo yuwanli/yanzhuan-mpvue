@@ -29,7 +29,7 @@ export default {
   box-sizing: border-box;
   padding-top: 30/@bs;
   width: 320/@bs;
-  height: 368/@bs;
+  height: 404/@bs;
   border-bottom: 1/@bs solid #d9d9d9;
   text-align: center;
   font-size: 24/@bs;
@@ -42,18 +42,20 @@ export default {
     width: 230/@bs;
     height: 230/@bs;
     background-color: #e8e8e8;
-    background-image: url(http://sonotemp.b0.upaiyun.com/yanzhuan/static/images/default.jpg);
+    background-image: url(https://image.sono.mobi/yanzhuang/static/images/default.jpg);
     background-position: center;
     background-size: 230/@bs 230/@bs;
   }
   &-name{
+    height: 72/@bs;
     overflow: hidden;
     margin-top: 12/@bs;
     padding: 0 20/@bs;
     color: @blackColor;
     text-overflow: ellipsis;
-    white-space: nowrap;
     line-height: 36/@bs;
+    text-align: left;
+    -webkit-line-clamp: 2;
   }
   &-price{
     color: @themeBlack;

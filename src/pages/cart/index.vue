@@ -32,7 +32,6 @@
           </div>
         </div>
       </div>
-      <p class="tips">开具发票：购买后，在“我的订单”申请</p>
       <p class="total">合计：￥{{total || 0}}</p>
       <div class="submit" @click="toOrder">去结算</div>
     </template>

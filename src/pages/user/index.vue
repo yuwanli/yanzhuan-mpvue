@@ -1,7 +1,7 @@
 <template>
   <div class="container no-header">
     <scroll-view class="list" scroll-y="true" enable-back-to-top=true  @scrolltolower="loadData(true)">
-      <div class="top" style="background-image: url(http://sonotemp.b0.upaiyun.com/yanzhuan/static/images/user_bg.jpg)">
+      <div class="top" style="background-image: url(https://image.sono.mobi/yanzhuang/static/images/user_bg.jpg)">
         <image class="avatar" :src="userInfo.user.self_img"></image>
         <div class="content">
           <span class="name">{{userInfo.user.nick_name}}</span>
