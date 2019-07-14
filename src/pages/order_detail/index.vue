@@ -25,6 +25,8 @@
         </div>
       </div>
     </div>
+    <div class="freight" v-if="order_freight">快递：{{order_freight}}</div>
+    <!-- <div class="freight no-freight" v-else>快递：<span>15</span></div> -->
     <div class="total">合计：￥{{total}}</div>
     <div class="submit" @click="toBuy">去支付</div>
   </div>
@@ -38,7 +40,8 @@ export default {
   data () {
     return {
       order: {},
-      address: {}
+      address: {},
+      orderInfo: {}
     }
   },
   mixins: [base],
@@ -53,11 +56,15 @@ export default {
     title
   },
   computed: {
+    order_freight () {
+      return +this.orderInfo.order_freight || 0
+    },
     total () {
       let res = 0
       this.order.length > 0 && this.order.forEach(val => {
         res += val.number * val.shop_price
       })
+      res += (this.order_freight)
       return res.toFixed(2)
     }
   },
@@ -138,7 +145,7 @@ export default {
   }
 }
 .total{
-  margin-top: 20/@bs;
+  margin-top: 12/@bs;
   padding: 0 30/@bs;
   color: #806ffd;
   text-align: right;
@@ -155,6 +162,19 @@ export default {
   text-align: center;
   font-size: 30/@bs;
   line-height: 50/@bs;
+}
+.freight{
+  margin-top: 10/@bs;
+  padding-right: 32/@bs;
+  color: #9b9b9b;
+  text-align: right;
+  font-size: 24/@bs;
+  line-height: 32/@bs;
+}
+.no-freight{
+  span{
+    text-decoration: line-through;
+  }
 }
 .item{
   margin: 0 30/@bs;

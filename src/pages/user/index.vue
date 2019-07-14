@@ -9,23 +9,33 @@
         </div>
       </div>
       <div class="order_num">订单数量（{{userInfo.user.order_num || 0}}）</div>
-      <div v-for="item in list" @click="toDetail(item.good_id)" v-bind:key="item.id" class="item">
+      <div v-for="item in list" v-bind:key="item.order_sn" class="item">
         <div class="item_base">
           <span class="num">订单号：{{item.order_sn}}</span>
-          <span class="status">{{status[item.order_status-1]}}</span>
+          <p @click.stop="toOrder(item.id)" class="btn" v-if="item.order_status==='1'">去支付</p>
+          <span v-else class="status">{{status[item.order_status-1]}}</span>
         </div>
         <div class="item_detail">
-          <div class="item_detail-name">
-              <span class="goods">商品：{{item.good_name}}</span>
-              <span @click.stop="toOrder(item.id)" class="btn" v-if="item.order_status==='1'">去支付</span>
-          </div>
-          <div class="item_detail-box">
-            <div class="picBox" :style="'background-image:url('+item.good_img+')'"></div>
-            <div class="desc">
-              <div class="time">下单时间：{{item.timeStr}}</div>
-              <div class="price">合计:<span style="color: #806ffd">{{item.order_amount}}</span></div>
+          <div class="item_detail-wrapper" @click="toDetail(good.good_id)" v-for="(good,idx) in item.good_list" v-bind:key="idx">
+            <div class="item_detail-name">
+                <p class="goods">商品：{{good.good_name}}</p>
+                <!-- <p @click.stop="toOrder(item.id)" class="btn" v-if="item.order_status==='1'">去支付</p> -->
+            </div>
+            <div class="item_detail-box">
+              <div class="picBox" :style="'background-image:url('+good.good_img+')'"></div>
+              <div class="desc">
+                <div class="time">下单时间：{{item.timeStr}}</div>
+                <div class="price">{{good.shop_price}} <span>x{{good.number}} </span></div>
+              </div>
             </div>
           </div>
+        </div>
+        <div class="item_total">
+          <div class="item_total-info">
+            <span>共{{item.total_num}}件商品</span>
+            <span v-if="item.order_freight !== '0'">快递：{{item.order_freight}}</span>
+          </div>
+          <p class="item_total-amount">合计: {{item.order_amount}}</p>
         </div>
       </div>
       <sono-loading v-show="initFlag" :hasMore="hasMore"></sono-loading>
@@ -73,6 +83,12 @@ export default {
     this.initFlag && this.init(true)
   },
   methods: {
+    getTotalNum (list) {
+      return 2
+      // return list.reduce((res, item) => {
+      //   return res + (+item.number)
+      // }, 0)
+    },
     init (hideLoading) {
       this.loadData(hideLoading)
     },
@@ -117,6 +133,12 @@ export default {
         },
         hideLoading
       ).then((res) => {
+        res.list.map((item) => {
+          item.total_num = item.good_list.reduce((total, good) => {
+            return total + (+good.number)
+          }, 0)
+          return item
+        })
         this.loading = false
         this.page += 1
         this.list = this.list.concat(this.formatListData(res.list))
@@ -142,6 +164,9 @@ export default {
 
 <style lang="less" scoped>
 @import '~src/utils/less/var.less';
+.list{
+  background-color: #ececec;
+}
 .top{
   display: flex;
   align-items: center;
@@ -201,15 +226,54 @@ export default {
   z-index: 10;
 }
 .item{
-  padding: 15/@bs 30/@bs;
+  padding: 15/@bs 0;
+  margin-bottom: 15/@bs;
+  background-color: #fff;
   &_base{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     border-bottom: 1/@bs solid #aaa;
     font-size: 20/@bs;
-    line-height: 40/@bs;
+    line-height: 50/@bs;
+    margin: 0 30/@bs;
+    .btn{
+      flex: 0 0 116/@bs;
+      box-sizing: border-box;
+      width: 116/@bs;
+      height: 36/@bs;
+      border-radius: 5/@bs;
+      background-color: #806ffd;
+      color: #fff;
+      text-align: center;
+      font-size: 20/@bs;
+      line-height: 36/@bs;
+    }
+  }
+  &_total{
+    border-top: 1/@bs solid #aaa;
+    padding: 10/@bs 32/@bs;
+    &-info{
+      line-height: 40/@bs;
+      font-size: 24/@bs;
+      color: #9b9b9b;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    &-amount{
+      font-size: 32/@bs;
+      color: #806ffd;
+      text-align: right;
+      line-height: 50/@bs;
+      font-weight: 500;
+    }
   }
   &_detail{
+    padding: 0 30/@bs 20/@bs;
+    &-wrapper{
+      margin-top: 20/@bs;
+    }
     &-box{
       display: flex;
       align-items: center;
@@ -237,6 +301,10 @@ export default {
         }
         .price{
           font-size: 24/@bs;
+          color: #806ffd;
+          span{
+            font-size: 18/@bs;
+          }
         }
       }
     }
@@ -245,28 +313,19 @@ export default {
       overflow: hidden;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: no-wrap;
+      width: 100%;
       margin: 10/@bs auto 20/@bs;
       font-size: 24/@bs;
       line-height: 30/@bs;
       .goods{
-        flex: 1;
         margin-right: 15/@bs;
+        flex: 1;
         text-overflow: ellipsis;
         white-space: nowrap;
+        overflow: hidden;
       }
-      .btn{
-        display: inline-block;
-        flex: 0 0 116/@bs;
-        box-sizing: border-box;
-        width: 116/@bs;
-        height: 36/@bs;
-        border-radius: 5/@bs;
-        background-color: #806ffd;
-        color: #fff;
-        text-align: center;
-        font-size: 20/@bs;
-        line-height: 36/@bs;
-      }
+
     }
 
   }
