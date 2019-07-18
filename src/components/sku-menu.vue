@@ -15,8 +15,8 @@
       </div>
     </div>
     <template v-if="data.remained_number == 0">
-      <div class="sku_item noMore" @click="noMoreClick">
-        该产品已售罄  <span>我要预定</span>
+      <div class="sku_item noMore">
+        该产品已售罄
       </div>
     </template>
     <template v-else>

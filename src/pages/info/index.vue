@@ -2,6 +2,11 @@
     <div class="container no-header">
       <title title="通知"></title>
       <scroll-view class="listCon" scroll-y="true" enable-back-to-top=true  @scrolltolower="loadData(true)">
+          <div class="weixin" @click="setContent">
+            <h1>联系微信客服</h1>
+            <p>yanzhuang9999</p>
+          </div>
+
           <div class="item" v-for="(item,index) in list" :key="item.id" @click="readMessage(item,index)" >
             <div class="item-icon">
               <image src="/static/images/icon_logistics.png"></image>
@@ -44,6 +49,17 @@ export default {
     this.loadData(false)
   },
   methods: {
+    setContent () {
+      wx.setClipboardData({
+        data: 'yanzhuang9999',
+        success (res) {
+          wx.showToast({
+            title: '微信号复制成功',
+            icon: 'none'
+          })
+        }
+      })
+    },
     formatDate (s) {
       let date = new Date(s * 1000)
       let y = date.getFullYear() < 10 ? '0' + date.getFullYear() : date.getFullYear()
@@ -105,6 +121,26 @@ export default {
 
 <style lang="less" scoped>
 @import '~src/utils/less/var.less';
+.weixin{
+  width: 640/@bs;
+  height: 253/@bs;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('https://image.sono.mobi/yanzhuang/static/images/info-top.png');
+  text-align: center;
+  h1{
+    font-size: 30/@bs;
+    line-height: 60/@bs;
+    color: #fff;
+    font-weight: bold;
+  }
+  p{
+    font-size: 30/@bs;
+    color: #6e5cf0;
+    line-height: 98/@bs;
+  }
+}
 .item{
   display: flex;
   justify-content: space-between;

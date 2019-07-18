@@ -7,7 +7,7 @@
       </div>
       <div class="address_info">{{address.province}}{{address.city}}{{address.district}}{{address.address}}</div>
     </div>
-    <div class="title">严妆</div>
+    <div class="title">严妆<image class="title_label" src="https://image.sono.mobi/yanzhuang/static/images/baoyou.png"></image></div>
     <div class="item" v-for="item in order" :key="item.id">
       <div class="item_base">
         <div class="name">商品：{{item.good_name}}</div>
@@ -103,6 +103,14 @@ export default {
   color: #333;
   font-size: 24/@bs;
   line-height: 60/@bs;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  &_label{
+    width: 194/@bs;
+    height: 30/@bs;
+    margin-left: 20/@bs;
+  }
 }
 .address{
   overflow: hidden;
