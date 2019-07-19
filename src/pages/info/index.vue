@@ -95,25 +95,26 @@ export default {
       })
     },
     readMessage (item) {
-      const handle = () => {
-        wx.setClipboardData({
-          data: item.order_sn,
-          success: () => {
-            wx.showToast({
-              title: '单号已复制到剪贴板',
-              icon: 'none'
-            })
-          }
-        })
-      }
+      // const handle = () => {
+      //   wx.setClipboardData({
+      //     data: item.order_sn,
+      //     success: () => {
+      //       wx.showToast({
+      //         title: '单号已复制到剪贴板',
+      //         icon: 'none'
+      //       })
+      //     }
+      //   })
+      // }
       if (item.read_mark === '1') {
         readMessage(item.id).then(res => {
           item.read_mark = 2
           this.updateUserStatus()
         })
-      } else {
-        handle()
       }
+      // else {
+      //   handle()
+      // }
     }
   }
 }
@@ -180,6 +181,9 @@ export default {
   &-desc{
     overflow: hidden;
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     h1{
       font-size: 20/@bs;
       line-height: 40/@bs;
@@ -189,12 +193,13 @@ export default {
       }
     }
     p{
+      width: 100%;
       overflow: hidden;
       color: rgba(38,38,38,0.6);
       text-overflow: ellipsis;
-      white-space: nowrap;
       font-size: 20/@bs;
-      line-height: 40/@bs;
+      line-height: 24/@bs;
+      -webkit-line-clamp: 2;
     }
   }
 }
