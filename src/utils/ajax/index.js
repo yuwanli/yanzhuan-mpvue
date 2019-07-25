@@ -87,7 +87,7 @@ export const ajax = (options) => {
           }
           getWxData(mid)
         } else {
-          wx.showToast({
+          !options.cancelDefaultHandler && wx.showToast({
             title: resp.errmsg || '未知错误',
             icon: 'none',
             duration: 2000

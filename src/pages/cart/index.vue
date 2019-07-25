@@ -178,6 +178,18 @@ export default {
         wx.navigateTo({
           url: `/pages/order_detail/main?id=${res.order_id}`
         })
+      }).catch((error) => {
+        wx.showModal({
+          'title': '提示',
+          'content': error.errmsg,
+          showCancel: false,
+          confirmText: '确认',
+          success: (res) => {
+            if (res.confirm) {
+              this.init(true)
+            }
+          }
+        })
       })
     }
   }

@@ -12,19 +12,14 @@ export const getCartList = (hideLoading) => {
   })
 }
 
-export const addOrder = (data) => {
-  return new Promise((resolve, reject) => {
-    ajax({
-      sono: 'order/add',
-      method: 'POST',
-      data: {
-        ...data
-      }
-    }).then(res => {
-      resolve(res)
-    })
-  })
-}
+export const addOrder = (data) => ajax({
+  sono: 'order/add',
+  method: 'POST',
+  data: {
+    ...data
+  },
+  cancelDefaultHandler: true
+})
 
 export const deleteCart = (id) => {
   return new Promise((resolve, reject) => {
