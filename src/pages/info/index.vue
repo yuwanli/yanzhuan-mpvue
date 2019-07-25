@@ -147,7 +147,7 @@ export default {
   justify-content: space-between;
   margin: 0 30/@bs;
   padding: 30/@bs 0 20/@bs;
-  height: 90/@bs;
+  min-height: 90/@bs;
   border-bottom: 1/@bs solid #aaa;
   &-icon{
     position: relative;
@@ -194,12 +194,11 @@ export default {
     }
     p{
       width: 100%;
-      overflow: hidden;
       color: rgba(38,38,38,0.6);
-      text-overflow: ellipsis;
       font-size: 20/@bs;
+      // word-break:break-all;
+      // white-space: nowrap;
       line-height: 24/@bs;
-      -webkit-line-clamp: 2;
     }
   }
 }
