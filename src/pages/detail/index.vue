@@ -97,6 +97,9 @@ export default {
     color: @blackColor;
     font-size: 30/@bs;
     line-height: 42/@bs;
+    padding: 0 24/@bs;
+    text-align: center;
+    word-break: break-all;
   }
   p{
     color: @themeBlack;
